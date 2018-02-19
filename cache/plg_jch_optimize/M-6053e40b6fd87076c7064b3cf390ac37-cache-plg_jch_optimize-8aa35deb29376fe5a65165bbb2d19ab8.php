@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:196:"/*@font-face{font-family:'Lora';font-style: normal;font-weight:400;src:local('Lora'),local('Lora-Regular'), url(http://fonts.gstatic.com/s/lora/v9/4vqKRIwnQQGUQQh-PnvdMA.woff2) format('woff2');}*/";s:6:"output";s:0:"";}

@@ -1,0 +1,29 @@
+<div class="tools-area tools-bar" ng-show="document">
+    <ul class="lft-toolbar">
+        <li ng-class="{'active':selected==5}" ng-click="selected=5">
+            <a class="tool" href="" data-toggle="tooltip" data-placement="bottom" title="Select" ng-click="selectTool('select')">
+                <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li ng-class="{'active':selected==4}" ng-click="selected=4">
+            <a class="tool" href="" data-toggle="tooltip" data-placement="bottom" title="Wall" ng-click="selectTool('wall')">
+                <i class="fa fa-map-o" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li ng-class="{'active':selected==3}" ng-click="selected=3">
+            <a class="tool" tool-type="slab" href="" data-toggle="tooltip" data-placement="bottom" title="Slab" ng-click="selectTool('slab')">
+                <i class="fa fa-object-ungroup" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li ng-class="{'active':selected==2}" ng-click="selected=2">
+            <a class="tool" tool-type="polygon" href="" data-toggle="tooltip" data-placement="bottom" title="Area" ng-click="selectTool('area')">
+                <i class="fa fa-square-o"></i>
+            </a>
+        </li>
+        <li ng-class="{'active':selected==1}" ng-click="selected=1">
+            <a class="tool" href="" data-toggle="tooltip" data-placement="bottom" title="Count" ng-click="selectTool('count')">
+                <i class="fa fa-slack" aria-hidden="true"></i>
+            </a>
+        </li> 
+    </ul>
+</div>

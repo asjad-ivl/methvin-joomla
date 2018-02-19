@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:265:"try{jQuery(function($){$(".hasTooltip").tooltip({"html":true,"container":"body"});});jQuery(function($){$(".hasPopover").popover({"html":true,"trigger":"hover focus","container":"body"});});}catch(e){console.error('Error in script declaration; Error:'+e.message);};";}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html ng-app="MethvinApp">
+
+<head>
+    <title>
+        Methvin
+    </title>
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel='stylesheet' href='bower_components/components-font-awesome/css/font-awesome.css' />
+    <link rel='stylesheet' href='bower_components/bootstrap-css-only/css/bootstrap.css' />
+    <link rel='stylesheet' href='bower_components/spectrum/spectrum.css' />
+    <link rel='stylesheet' href='bower_components/angular-xeditable/dist/css/xeditable.css' />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="sty
+les/styles.css" />
+    <!-- endbuild -->
+    <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
+</head>
+
+<body ng-controller="AppController" oncontextmenu='return false'>
+<div class="messageArea hide" id="errorMessageArea" ng-click="hideErrorMessage()"> </div>
+    <div class="wrapper" id="wrapper">
+        <div class="breadcrumbs-area" ng-show="document">
+            <ul>
+                <li><a href="">{{document.name}}</a></li>
+                <li><a href="">{{document.pages[document.currentPageIndex].name}}</a></li>
+            </ul>
+        </div>
+        <ng-include src="'scripts/views/rightToolBar.html'"></ng-include>
+        <ng-include src="'scripts/views/topToolBar.html'"></ng-include>
+        <div class="canvas-area" ng-click="uploadDocument()"></div>
+        <div class="bottom-bar" ng-class="{'active':pageProperties.showLeft}" id="bottom_bar">
+            <div class="bottom-bar-content">
+                <span class="toggle-area" ng-click="pageProperties.showLeft=!pageProperties.showLeft"><i class="fa fa-angle-double-right" aria-hidden="true" ></i></span>
+                <h5>Measurement Report</h5>
+                <div class="left-side-area">
+                    <ng-include src="'scripts/views/leftBar.html'"></ng-include>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="page-area" id="page-area" ng-class="{'active':pageProperties.showright}">
+                <span class="toggle-area toggle-area-pages" ng-click="pageProperties.showright=!pageProperties.showright">
+                    <i class="fa fa-angle-double-left" id="right_bar_double_up" aria-hidden="true"></i>
+                </span>
+                <h5>Pages</h5>
+                <ul id="thumbs-ul">
+                    <li ng-repeat="page in document.pages track by $index">
+                        <img ng-src="{{page.path}}" width="250" height="150" ng-click="loadFileOnCanvas(page, $index)" />
+                        <div> {{page.name}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>   
+    <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <pattern id="img1" patternUnits="userSpaceOnUse" width="20" height="20">
+                <image id='hatchImage' xlink:href="images/Wall.png" x="0" y="0" width="20" height="20">
+                </image>
+            </pattern>
+        </defs>
+    </svg>
+
+    <input type="file" name="file" nv-file-select uploader="canvasUploader" style="display:none" id="canvasFileUploader" />
+    <div id="canvasArea" ng-mousemove="startSnapping($event)" >  </div>
+    <nav class="context-menu" id="contextMenu">
+        <ul class="context-menu__items">
+            <li class="context-menu__item" ng-click="displayMaterialPopup()">
+                <a href="" class="context-menu__link" >
+                    <i class="fa fa-eye"></i>
+                    <span> Material </span>
+                </a>
+            </li>
+            <hr></hr>
+            <li class="context-menu__item" ng-click="displayPropertyPopup()">
+                <a class="context-menu__link" href="" >
+                    <i class="fa fa-edit"></i>
+                    <span> Properties </span>
+                </a>
+            </li>
+            <hr></hr>
+            <li class="context-menu__item" ng-click="removeDrawing()">
+                <a href="#" class="context-menu__link" >
+                    <i class="fa fa-times"></i>
+                    <span> Remove </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1"> 
+
+      <defs> 
+        <pattern id="none" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-none-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+
+      <defs> 
+        <pattern id="10-dot" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-10-dot-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="20-dot" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-20-dot-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="30-dot" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-30-dot-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="brick" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-brick-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="brick-diagonal" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-diagonal-brick-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="diagonal-down" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-diagonal-down-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="diagonal-up" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-diagonal-up-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-grid-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs>
+      <defs> 
+        <pattern id="horizontal" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-horizontal-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="none" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-none-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="vertical" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-vertical-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+      <defs> 
+        <pattern id="weave" patternUnits="userSpaceOnUse" width="20" height="20"> 
+          <image id='hatchImage' xlink:href="images/hatch-weave-img.png"  x="0" y="0" width="20" height="20">
+          </image> 
+        </pattern> 
+      </defs> 
+    </svg>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/spectrum/spectrum.js"></script>
+    <script src="bower_components/Snap.svg/dist/snap.svg-min.js"></script>
+    <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/angular-spectrum-colorpicker/dist/angular-spectrum-colorpicker.min.js"></script>
+    <script src="bower_components/randomcolor/randomColor.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/snap.svg.zpd.js"></script> 
+    <script src="scripts/model.js"></script>
+    <script src="scripts/takeOff/tools/contextMenu.js"></script>
+    <script src="scripts/takeOff/tools/toolSupport.js"></script>
+    <script src="scripts/takeOff/tools/tool.js"></script>
+    <script src="scripts/takeOff/tools/countTool.js"></script>
+    <script src="scripts/takeOff/tools/lineTool.js"></script>
+    <script src="scripts/takeOff/tools/polygonTool.js"></script>
+    <script src="scripts/takeOff/tools/scaleTool.js"></script>
+    <script src="scripts/takeOff/tools/selectTool.js"></script>
+    <script src="scripts/takeOff/tools/slabTool.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/utilities.js"></script>
+    
+    <script src="scripts/controller/AppController.js"></script>
+    <script src="scripts/controller/ScalePopupController.js"></script> 
+    <script src="scripts/controller/PropertyPopupController.js"></script>
+    <script src="scripts/controller/MaterialPopupController.js"></script>
+    <script src="scripts/controller/RightToolBarController.js"></script>
+    <script src="scripts/controller/OpenDocumentController.js"></script>
+    <script src="scripts/service/UserService.js"></script>
+    <script src="scripts/service/DocumentService.js"></script>
+    <script src="scripts/service/MessageService.js"></script>
+    <script src="scripts/init.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+ 
+
+<div id="myModal"> 
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Property popup</h4>
+      </div>
+      <div class="modal-body">
+        <ul id="property-ul">
+                <li class='modal-color'>
+                    <label>Color</label> 
+                    <spectrum-colorpicker ng-model="targetObject.parent.designProperties.stroke" format="'hex'" ng-change="updateDesign('stroke')"></spectrum-colorpicker> 
+                </li>
+                <li class='modal-fill'>
+                    <label>Fill Color</label> 
+                    <spectrum-colorpicker ng-model="targetObject.parent.designProperties['fill']" format="'hex'" ng-change="updateDesign('fill')"></spectrum-colorpicker> 
+                    <input type="checkbox" value="" /> Highlight
+                </li>
+
+
+                <li class='modal-hatch'>
+                    <label>Hatch</label> 
+                    <span id="hatch-content" ng-click="displayHatchDropDown=!displayHatchDropDown">None</span>
+                    <ul id="hatch-ul" ng-show="displayHatchDropDown">
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('none'); displayHatchDropDown=!displayHatchDropDown"> None 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-none-img.png" alt="" />
+                            </span>
+                        </li>
+
+                        <li  class="title">Standard</li>
+
+                        <li ng-model="targetObject.parent.designProperties['fill']"  ng-click="updateHatch('brick'); displayHatchDropDown=!displayHatchDropDown" >Brick 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-brick-img.png" alt="" />
+                            </span>
+                        </li>
+
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('brick-diagonal'); displayHatchDropDown=!displayHatchDropDown"  > Diagonal Brick 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-diagonal-brick-img.png" alt="" />
+                            </span>
+                        </li>
+
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('horizontal'); displayHatchDropDown=!displayHatchDropDown" >Horizontal 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-horizontal-img.png" alt="" />
+                            </span>
+                        </li>
+
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('vertical'); displayHatchDropDown=!displayHatchDropDown"  >Vertical 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-vertical-img.png" alt="" />
+                            </span>
+                        </li>
+
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('diagonal-down'); displayHatchDropDown=!displayHatchDropDown"  >Diagonal Down 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-diagonal-down-img.png" alt="" />
+                            </span>
+                        </li>
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('diagonal-up'); displayHatchDropDown=!displayHatchDropDown"  >Diagonal Up 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-diagonal-up-img.png" alt="" />
+                            </span>
+                        </li>
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('grid'); displayHatchDropDown=!displayHatchDropDown"  > Grid 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-grid-img.png" alt="" />
+                            </span>
+                        </li>
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('weave'); displayHatchDropDown=!displayHatchDropDown"  > Weave 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-weave-img.png" alt="" />
+                            </span>
+                        </li>
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('10-dot'); displayHatchDropDown=!displayHatchDropDown"  > 10% Dots 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-10-dot-img.png" alt="" />
+                            </span>
+                        </li>
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('20-dot'); displayHatchDropDown=!displayHatchDropDown" > 20% Dots 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-20-dot-img.png" alt="" />
+                            </span>
+                        </li>
+                        
+                        <li ng-model="targetObject.parent.designProperties['fill']" ng-click="updateHatch('30-dot'); displayHatchDropDown=!displayHatchDropDown" >30% Dots 
+                            <span class="hatch-pic">
+                                <img src="images/hatch-30-dot-img.png" alt="" />
+                            </span>
+                        </li>
+                    </ul> 
+                </li>
+
+                <!-- <li class='modal-scale'><label>Scale</label> 
+                    <select>
+                        <option>50</option>
+                    </select>
+                </li> -->
+
+                <li class='modal-opacity'>
+                    <label>Opacity</label> 
+                    <select ng-model="targetObject.parent.designProperties.opacity" ng-change="updateDesign('opacity')">
+                        <option value='1'>1</option>
+                        <option value='0.8'>0.8</option>
+                        <option value='0.6'>0.6</option>
+                        <option value='0.4'>0.4</option>
+                        <option value='0.2'>0.2</option>
+                    </select>
+                </li>
+
+                <li class='fill-opacity'>
+                    <label>Fill Opacity</label> 
+                    <select ng-model="targetObject.parent.designProperties['fill-opacity']" ng-change="updateDesign('fill-opacity')">
+                        <option value='1'>1</option>
+                        <option value='0.8'>0.8</option>
+                        <option value='0.6'>0.6</option>
+                        <option value='0.4'>0.4</option>
+                        <option value='0.2'>0.2</option>
+                    </select>
+                </li>
+
+                <li class='modal-stroke-width'>
+                    <label>Line Width</label> 
+                    <select ng-model="targetObject.parent.designProperties['strokeWidth']" ng-change="updateDesign('strokeWidth')" >
+                        <option value="1">1.00</option>
+                        <option value="2">2.00</option>
+                        <option value="3">3.00</option>
+                        <option value="4">4.00</option>
+                        <option value="5">5.00</option>
+                    </select>
+                </li>
+
+                <li class='modal-stoke-style'>
+                    <label >Style</label> 
+                    <select ng-model="targetObject.parent.designProperties['stroke-dasharray']" ng-change="updateDesign('stroke-dasharray')">
+                        <option value='5,5'>5,5</option>
+                        <option value='5,3'>5,3</option>
+                        <option value="5,1">5,1</option>
+                    </select>
+                </li>
+
+                <!--<li><label>&nbsp;</label> 
+                    <input type="checkbox" value="" checked="checked"/> Show Caption
+                </li>
+
+                <li><label>&nbsp;</label> 
+                    <input type="checkbox" value="" /> Show All Measurments
+                </li>
+
+                <li><label>&nbsp;</label> 
+                    <input type="checkbox" value="" /> Show Centriod
+                </li>
+
+                <li><label>Font</label> 
+                    <select>
+                        <option>Helvatica</option>
+                    </select>
+                </li>   
+
+                <li><label>Font Size</label> 
+                    <select>
+                        <option>12</option>
+                    </select>
+                </li>   
+
+                <li>
+                    <label>Text Color</label> 
+                    <input type="color" value="#f20403" />
+                </li>
+
+                <li>
+                    <label>Font Style</label> 
+                    <ul class="font-style-ul">
+                        <li><a href=""><strong>B</strong></a></li>
+                        <li><a href=""><i>I</i></a></li>
+                        <li><a href=""><u>U</u></a></li>
+                        <li><a href=""><strike>T</strike></a></li>
+                    </ul>
+                </li>    -->
+
+            </ul>
+      </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="close(this)">Close</button>
+        </div>
+</div>
+ 

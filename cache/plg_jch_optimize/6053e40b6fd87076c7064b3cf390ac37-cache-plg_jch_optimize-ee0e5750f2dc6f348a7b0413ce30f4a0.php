@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";a:1:{i:0;s:69:"<img src="http://www.google.com/logos/Logo_25wht.gif" alt="Google" />";}s:6:"output";s:0:"";}

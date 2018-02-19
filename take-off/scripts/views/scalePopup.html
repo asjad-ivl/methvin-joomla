@@ -1,0 +1,37 @@
+<div id="">
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Set Scale</h4>
+    </div>
+
+    <div class="modal-body scale-body">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="input-group input-group-sm" >
+                    <span class="input-group-addon" id="basic-addon1">Scale</span>
+                    <input type="text" class="form-control" aria-describedby="enter scale" name="scale" ng-model="scale"  />
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    <select class="form-control" id="unit" ng-model="measurementUnit" style="display: inline">
+                        <option>inch</option>
+                        <option>cm</option>
+                        <option>m</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='error'>
+        <p style="color: red; display: none"> - please enter value </p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancelScale()" >Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="setScale()" >Save</button>
+    </div>
+    
+</div>

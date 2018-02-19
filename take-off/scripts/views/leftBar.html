@@ -1,0 +1,25 @@
+<div class="left-side-area" style="height: 553px;">
+
+    <div ng-show="document && document.pages" class="left-side-area-in" ng-init="openIndex=-1">
+        <ul class="parent" ng-model="document.pages[document.currentPageIndex].elements">
+            <li ng-repeat="element in document.pages[document.currentPageIndex].elements" ng-click="openIndex = openIndex == $index? -1 : $index;" ng-dblclick="setCurrentElement($index)" ng-if="element.type!=='select'"  ng-mouseover="highlightChildDrawings(element)" ng-mouseout="unhighlightChildDrawings(element)" >
+                <i class="{{element.type}}" aria-hidden="true"></i>
+               
+                <span class="parent" ng-class="{'selectedNode':openIndex == $index}" style="background-color:{{element.defaultDesignPorperties.fill}}">
+                    <a editable-text="element.name" e-required buttons="no" > {{element.name}}</a>
+                    <i class="fa fa-edit" ng-click="nameForm.$show()"> </i>
+                    <i class="fa fa-trash" ng-click="deleteElement(element, $index)"> </i>
+                     <i ng-show="element.type=='count'" style="margin-right:5px; font-weight:bold">{{element.drawings.length}}</i>
+                </span>
+                <ul  ng-show="openIndex==$index" ng-if="element.type!='count'">
+                    <li ng-repeat="drawing in element.drawings track by $index" >
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        <span ng-mouseover="highlightDrawing(drawing, $event)" ng-mouseout="unhighlightDrawing(drawing, $event)" style="background-color:{{drawing.designProperties.fill}}"> <a editable-text="drawing.title" e-required buttons="no" ng-click="activateEditable($event)"> {{drawing.title}} </a>
+                                <i class="fa fa-edit" ng-click="displayMaterialPopup(drawing.snapInstance)"></i> 
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+    <name>uberTOC Table of Contents &amp; FAQ module</name>
+    <author>Vikram Ramanujam &amp; Alex Wang</author>
+    <creationDate>May 2013</creationDate>
+    <copyright>Copyright (C) 2012 - 2013 DBY Creative. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later;</license>
+    <authorEmail>info@dbycreative.net</authorEmail>
+    <authorUrl>http://ubertoc.boomstrap.com</authorUrl>
+    <version>1.0.0</version>
+    <description>uberTOC - It automatically scans through the page and creates a responsive table of contents via jQuery.</description>
+    <files>
+        <filename module="mod_ubertoc">mod_ubertoc.php</filename>
+        <filename>mod_ubertoc.xml</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+    </files>
+	
+    <help key="Module Top" />
+    <config>
+        <fields name="params">
+            <fieldset name="basic">				              
+                <field name="load_jquery" type="radio" default="0" label="Load jQuery" description="Loads the jQuery library. The library is required for the slider to function properly, but you may ignore this if you have already loaded jQuery earlier. This may also help resolve errors due to multiple versions of the library being loaded.">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+
+                <field name="selectors" type="text" default="h3,h4" label="Headings" description="Parent, top level links will be built by this heading level" />
+
+                <field name="context" type="text" default=".item-page" label="Context" description="Where is the content to search in? This will be something like '#main-content'." />
+
+                <field name="offset" type="text" default="0" label="Scroll Offset" description="The amount of space between the top of page and the selected table of contents item after the page has been scrolled" />
+
+                <field name="smoothScroll" label="Smooth Scroll" description="Enable / Disable smooth scrolling on when clicking on links" type="radio" default="1">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>              
+                </field>
+
+                <field name="useCSS" label="Include Responsive CSS" description="Use module's built in css to show/hide elements. If you already have Twitter bootstrap on your site you don't need this." type="radio" default="1">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>              
+                </field>
+
+                <field name="showAndHide" label="Show / Hide Sub Items" description="Used to determine if sub-items should be shown and hidden automatically" type="radio" default="1">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>              
+                </field>
+
+				<field name="use_tinynav" label="Enable TinyNav" description="TinyNav is a JavaScript plugin that changes list-based menu items into a dropdown, thus allowing for easier navigation on smaller screens such as tablets and mobile phones. You HAVE to also enable tinynav in boomstrap tempalte settings!" type="radio" default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>				
+				</field>
+
+                <field name="addHorizontalRule" label="Add Horizontal Rule" description="Adds a horizontal rule (&lt;hr&gt;) between each section to enhance readability." type="radio" default="1">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>              
+                </field>
+
+			</fieldset>            			
+            <fieldset name="advanced">
+				<field name="modulelayout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				
+                <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option	value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />				
+            </fieldset>			
+        </fields>
+    </config>
+</extension>

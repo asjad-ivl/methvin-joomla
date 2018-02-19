@@ -1,0 +1,2 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:358:"try{function s5_load_flex_menu(){var myMenu=new MenuMatic({tabletWidth:1400,effect:"slide & fade",duration:500,physics:'easeOutCirc',hideDelay:150,orientation:"horizontal",tweakInitial:{x:0,y:0},direction:{x:'right',y:'down'},opacity:95});}
+window.setTimeout(s5_load_flex_menu,1000);}catch(e){console.error('Error in script declaration; Error:'+e.message);};";}

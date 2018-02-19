@@ -1,0 +1,30 @@
+<div>
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Open Document</h4>
+    </div>
+
+    <div class="modal-body">
+         <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Last Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class='document-name' ng-dblclick='openDocument(123123)'>Sample </td>
+                <td>testing document upload</td>
+                <td>time here</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeDocumentPopup()">Cancel</button>
+    </div>
+
+</div>

@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:214:".jmoddiv.jmodinside{position:relative;top:0;left:0}.btn.jmodedit{z-index:1001;display:block;position:absolute;top:0;right:0}html[dir=rtl] .btn.jmodedit{right:auto;left:0}.btn.jfedit-menu{z-index:1002;display:block}";}

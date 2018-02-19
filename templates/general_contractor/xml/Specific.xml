@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<specific>
+	<version>4.0</version> 
+	<config>
+		<fields>
+            <fieldset name="s50" label="TPL_FIELD_TS_LABEL">
+                <field name="s51spacer_notice" label="&lt;span style=&quot;display:block;&quot;&gt;Make sure to hover your mouse over each title in this column for a full description of what each field does.&lt;/span&gt;" type="spacer" />
+                 
+				 <field name="xml_s5_uppercase" type="select:list" default="yes" label="TPL_UPPERCASELETTERS" description="TPL_UPPERCASELETTERS_DESC">
+					<option value="yes">TPL_UPPERCASELETTERS_01</option>
+					<option value="no">TPL_UPPERCASELETTERS_02</option>
+				</field>
+				<field name="xml_s5_nosubarrows" type="select:list" default="yes" label="TPL_NOSUB_LABEL" description="TPL_NOSUB_DESC">
+					<option value="yes">TPL_NOSUB_02</option>
+					<option value="no">TPL_NOSUB_01</option>
+				</field>
+				<field name="xml_s5_highlightcolor" type="text:6:6" default="" label="TPL_HIGHLIGHTCOLOR_LABEL" description="TPL_HIGHLIGHTCOLOR_DESC" />	
+				<field name="xml_s5_highlightcolor2" type="text:6:6" default="" label="TPL_HIGHLIGHTCOLOR2_LABEL" description="TPL_HIGHLIGHTCOLOR2_DESC" />					
+				<field name="xml_s5_fonts_highlight" type="select:list" show_search="1" default="" label="TPL_FIELD_SITEFONT_LABEL" description="TPL_FIELD_SITEFONT_DESC"></field>
+				<field name="xml_s5_fonts_highlight_style" type="text" label="TPL_FIELD_FONTSTYLE_HIGHLIGHT_LABEL" description="TPL_FIELD_FONTSTYLE_HIGHLIGHT_DESC" />		
+				<field name="xml_s5_fonts_highlight2" type="select:list" show_search="1" default="" label="TPL_FIELD_SITEFONT2_LABEL" description="TPL_FIELD_SITEFONT_DESC"></field>
+				<field name="xml_s5_fonts_highlight2_style" type="text" label="TPL_FIELD_FONTSTYLE_HIGHLIGHT2_LABEL" description="TPL_FIELD_FONTSTYLE_HIGHLIGHT_DESC" />					
+				<field name="xml_s5_headerback" type="text" default="" label="TPL_BACKIMAGE1_LABEL" description="TPL_BACKIMAGE1_DESC" />
+				
+				<field name="xml_s5_requestaquote" type="textarea" default="" label="TPL_REQUESTAQUOTE_LABEL" description="TPL_REQUESTAQUOTE_DESC" />
+            </fieldset>
+		</fields>
+	</config>	
+</specific>

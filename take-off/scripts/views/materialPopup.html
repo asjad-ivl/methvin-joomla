@@ -1,0 +1,68 @@
+<div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Set measurement materials</h4>
+    </div>
+    <div class="modal-body">
+        <div id="area-peri-div">
+            <h2>Perimeter: <span> </span> </h2>
+            <h3>Area: <span> </span></h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Section</th>
+                    <th>Multiplier</th>
+                    <th>Quantity</th>
+                    <th>Units</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="material in targetObject.parent.material">
+                <tr>
+                    <td>
+                        <div class="input-group input-group-sm">
+                          <input name="material" type="text" class="form-control" placeholder="material" aria-describedby="basic-addon1" ng-model="material.material" required="">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group input-group-sm">
+                          <input name="section" type="text" class="form-control" placeholder="Section" aria-describedby="basic-addon1" ng-model="material.section" required="">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group input-group-sm">
+                          <input name="multiplier" type="text" class="form-control" placeholder="Multiplier" aria-describedby="basic-addon1" ng-model="material.multiplier" required="">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-group input-group-sm">
+                          <input name="quantity" type="text" class="form-control" placeholder="Quantity" aria-describedby="basic-addon1" ng-model="material.quantity" required="">
+                        </div>
+                    </td>
+                    <td>
+                        <select name="unit"  ng-model="material.unit" > 
+                            <option value='TN'>TN</option>
+                            <option value='SM'>SM</option>
+                        </select>
+                        <span></span>
+                    </td>
+                    <td>
+                        <button type='button' class='btn btn-default btn-xs' ng-click='removeMaterial($index)'>
+                            <span class='glyphicon glyphicon-minus' aria-hidden='true'></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style='text-align: right'>
+            <button type="button" class="btn btn-default btn-sm" ng-click='addMaterial()'>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New
+            </button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="close()">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click='save()'>Save</button>
+    </div>
+</div>

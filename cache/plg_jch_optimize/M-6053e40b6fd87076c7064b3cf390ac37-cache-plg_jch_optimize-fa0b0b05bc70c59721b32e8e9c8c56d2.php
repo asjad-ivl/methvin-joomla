@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:299:"jQuery(document).ready(function(){jQuery("#a-site-logo").hover(function(){jQuery('#site-logo').css('transform',"scale(1.05)");});jQuery("#a-site-logo").mouseout(function(){jQuery('#site-logo').css('transform',"scale(1)");});jQuery('.fadein_img').fadeInScroll();jQuery(window).scroll(function(){});})";s:6:"output";s:0:"";}
