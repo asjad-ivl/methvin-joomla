@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Form
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -103,5 +103,21 @@ class JFormFieldSpacer extends JFormField
 	protected function getTitle()
 	{
 		return $this->getLabel();
+	}
+
+	/**
+	 * Method to get a control group with label and input.
+	 *
+	 * @param   array  $options  Options to be passed into the rendering of the field
+	 *
+	 * @return  string  A string containing the html for the control group
+	 *
+	 * @since   3.7.3
+	 */
+	public function renderField($options = array())
+	{
+		$options['class'] = empty($options['class']) ? 'field-spacer' : $options['class'] . ' field-spacer';
+
+		return parent::renderField($options);
 	}
 }

@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_users
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -54,7 +54,7 @@ class UsersViewDebuguser extends JViewLegacy
 		// Access check.
 		if (!JFactory::getUser()->authorise('core.manage', 'com_users'))
 		{
-			return JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
+			throw new JAccessExceptionNotallowed(JText::_('JERROR_ALERTNOAUTHOR'), 403);
 		}
 
 		$this->actions       = $this->get('DebugActions');
@@ -66,15 +66,14 @@ class UsersViewDebuguser extends JViewLegacy
 		$this->activeFilters = $this->get('ActiveFilters');
 
 		// Vars only used in hathor.
+		// @deprecated  4.0 To be removed with Hathor
 		$this->levels        = UsersHelperDebug::getLevelsOptions();
 		$this->components    = UsersHelperDebug::getComponents();
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
 		{
-			JError::raiseError(500, implode("\n", $errors));
-
-			return false;
+			throw new Exception(implode("\n", $errors), 500);
 		}
 
 		$this->addToolbar();

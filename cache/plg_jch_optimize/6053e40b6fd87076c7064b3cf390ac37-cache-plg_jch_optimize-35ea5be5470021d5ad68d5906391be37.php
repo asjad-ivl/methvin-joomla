@@ -1,1 +1,0 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:105:"jQuery(function($){$(".hasPopover").popover({"html":true,"trigger":"hover focus","container":"body"});});";s:6:"output";s:0:"";}

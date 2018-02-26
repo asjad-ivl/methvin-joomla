@@ -148,3 +148,39 @@
 2018-02-16T13:20:17+00:00	INFO 172.17.0.2	update	Deleting removed files and folders.
 2018-02-16T13:20:20+00:00	INFO 172.17.0.2	update	Cleaning up after installation.
 2018-02-16T13:20:20+00:00	INFO 172.17.0.2	update	Update to version 3.8.5 is complete.
+2018-02-20T08:23:08+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:23:22+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:23:29+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:24:28+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:24:33+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:25:00+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:27:23+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:27:47+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:30:22+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:30:30+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:31:06+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:31:12+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:31:20+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:33:19+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:35:48+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:37:18+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:38:28+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:43:21+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:44:07+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:53:00+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T08:53:14+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T10:26:15+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T10:29:16+00:00	INFO ::1	update	Finalising installation.
+2018-02-20T10:29:16+00:00	INFO ::1	update	Deleting removed files and folders.
+2018-02-20T10:29:31+00:00	INFO ::1	update	Cleaning up after installation.
+2018-02-20T10:29:31+00:00	INFO ::1	update	Update to version 3.7.1 is complete.
+2018-02-20T10:30:10+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T10:31:07+00:00	INFO ::1	update	Finalising installation.
+2018-02-20T10:31:07+00:00	INFO ::1	update	Deleting removed files and folders.
+2018-02-20T10:31:43+00:00	INFO ::1	update	Cleaning up after installation.
+2018-02-20T10:31:43+00:00	INFO ::1	update	Update to version 3.7.5 is complete.
+2018-02-20T10:32:55+00:00	INFO ::1	update	Starting installation of new version.
+2018-02-20T10:36:01+00:00	INFO ::1	update	Finalising installation.
+2018-02-20T10:36:02+00:00	INFO ::1	update	Deleting removed files and folders.
+2018-02-20T10:36:20+00:00	INFO ::1	update	Cleaning up after installation.
+2018-02-20T10:36:20+00:00	INFO ::1	update	Update to version 3.8.5 is complete.

@@ -1,1 +1,0 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:243:"jQuery(document).ready(function(){var myMenu=new MenuMatic({tabletWidth:1400,effect:"slide & fade",duration:500,physics:'easeOutCirc',hideDelay:150,orientation:"horizontal",tweakInitial:{x:0,y:0},direction:{x:'right',y:'down'},opacity:95});});";s:6:"output";s:0:"";}

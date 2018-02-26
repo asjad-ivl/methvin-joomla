@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  Layout
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -111,7 +111,7 @@ $url    = ($readonly ? ''
 		array(
 			'title' => JText::_('JLIB_FORM_CHANGE_IMAGE'),
 			'closeButton' => true,
-			'footer' => '<button class="btn" data-dismiss="modal">' . JText::_('JCANCEL') . '</button>'
+			'footer' => '<a class="btn" data-dismiss="modal">' . JText::_('JCANCEL') . '</a>'
 		)
 	);
 

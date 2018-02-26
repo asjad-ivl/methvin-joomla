@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_content
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -208,7 +208,7 @@ class ContentModelArticle extends JModelAdmin
 		}
 
 		// Default to component settings if neither article nor category known.
-		return parent::canEditState();
+		return parent::canEditState($record);
 	}
 
 	/**
@@ -414,7 +414,7 @@ class ContentModelArticle extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$app = JFactory::getApplication();
+		$app  = JFactory::getApplication();
 		$data = $app->getUserState('com_content.edit.article.data', array());
 
 		if (empty($data))
@@ -467,17 +467,19 @@ class ContentModelArticle extends JModelAdmin
 	public function validate($form, $data, $group = null)
 	{
 		// Don't allow to change the users if not allowed to access com_users.
-		if (($data['created_by'] || $data['modified_by']) && !JFactory::getUser()->authorise('core.manage', 'com_users'))
+		if (JFactory::getApplication()->isClient('administrator') && !JFactory::getUser()->authorise('core.manage', 'com_users'))
 		{
 			if (isset($data['created_by']))
 			{
 				unset($data['created_by']);
 			}
+
 			if (isset($data['modified_by']))
 			{
 				unset($data['modified_by']);
 			}
 		}
+
 		return parent::validate($form, $data, $group);
 	}
 
@@ -523,7 +525,7 @@ class ContentModelArticle extends JModelAdmin
 			$catid = CategoriesHelper::validateCategoryId($data['catid'], 'com_content');
 		}
 
-		// Save New Categoryg
+		// Save New Category
 		if ($catid == 0 && $this->canCreateCategory())
 		{
 			$table = array();
@@ -848,7 +850,7 @@ class ContentModelArticle extends JModelAdmin
 		if ($return)
 		{
 			// Now check to see if this articles was featured if so delete it from the #__content_frontpage table
-			$db = JFactory::getDbo();
+			$db = $this->getDbo();
 			$query = $db->getQuery(true)
 				->delete($db->quoteName('#__content_frontpage'))
 				->where('content_id IN (' . implode(',', $pks) . ')');

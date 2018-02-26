@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_fields
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
@@ -71,7 +71,7 @@ class FieldsTableGroup extends JTable
 	 *
 	 * @return  boolean  True if the instance is sane and able to be stored in the database.
 	 *
-	 * @link    https://docs.joomla.org/JTable/check
+	 * @link    https://docs.joomla.org/Special:MyLanguage/JTable/check
 	 * @since   3.7.0
 	 */
 	public function check()
@@ -133,7 +133,7 @@ class FieldsTableGroup extends JTable
 	 *
 	 * @return  string  The string to use as the title in the asset table.
 	 *
-	 * @link    https://docs.joomla.org/JTable/getAssetTitle
+	 * @link    https://docs.joomla.org/Special:MyLanguage/JTable/getAssetTitle
 	 * @since   3.7.0
 	 */
 	protected function _getAssetTitle()

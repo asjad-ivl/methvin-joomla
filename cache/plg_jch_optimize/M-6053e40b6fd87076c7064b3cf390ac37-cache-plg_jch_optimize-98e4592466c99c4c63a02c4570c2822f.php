@@ -1,1 +1,0 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:149:"var s5_responsive_trigger=750;var s5_responsive_layout="sidebar";var s5_responsive_layout_direction="_ltr";var s5_responsive_menu_auto_open="closed";";s:6:"output";s:0:"";}

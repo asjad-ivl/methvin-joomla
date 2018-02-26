@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_media
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -82,7 +82,7 @@ $doc->addScriptDeclaration(
 );
 ?>
 <form target="_parent" action="index.php?option=com_media&amp;tmpl=index&amp;folder=<?php echo $this->state->folder; ?>" method="post" id="mediamanager-form" name="mediamanager-form">
-	<div class="muted">
+	<div class="muted breadcrumbs">
 		<p>
 			<span class="icon-folder"></span>
 			<?php
@@ -93,7 +93,7 @@ $doc->addScriptDeclaration(
 	</div>
 
 	<div>
-		<label class="checkbox">
+		<label class="checkbox btn">
 			<?php echo JHtml::_('grid.checkall'); ?>
 			<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>
 		</label>

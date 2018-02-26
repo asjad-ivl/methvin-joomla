@@ -1,1 +1,0 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:89:"if(jQuery().jquery=='1.11.0'){jQuery.easing['easeOutExpo']=jQuery.easing['easeOutCirc']};";s:6:"output";s:0:"";}

@@ -1,1 +1,0 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";a:1:{i:0;s:107:"<img src="/images/New_icon_images/Takeoff.png" alt="Takeoff" class="fadein_img" width="480" height="360" />";}s:6:"output";s:0:"";}

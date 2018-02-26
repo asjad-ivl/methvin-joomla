@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Database
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -1736,7 +1736,7 @@ abstract class JDatabaseQuery
 		};
 
 		/**
-		 * Regexp to find an replace all tokens.
+		 * Regexp to find and replace all tokens.
 		 * Matched fields:
 		 * 0: Full token
 		 * 1: Everything following '%'
@@ -1762,7 +1762,7 @@ abstract class JDatabaseQuery
 	 *
 	 * @return  string  The string with the appropriate sql for addition of dates
 	 *
-	 * @see     http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_date-add
+	 * @link    http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_date-add
 	 * @since   13.1
 	 */
 	public function dateAdd($date, $interval, $datePart)

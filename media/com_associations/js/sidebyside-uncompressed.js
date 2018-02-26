@@ -1,5 +1,5 @@
 /**
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -154,6 +154,10 @@ jQuery(document).ready(function($) {
 
 	// Attach behaviour to reference frame load event.
 	$('#reference-association').on('load', function() {
+
+		// Load Target Pane AFTER reference pane has loaded to prevent session conflict with checkout
+		document.getElementById('target-association').setAttribute('src', document.getElementById('target-association').getAttribute('src'));
+
 		// If copy button used
 		if ($(this).contents().find('#jform_id').val() !== this.getAttribute('data-id'))
 		{

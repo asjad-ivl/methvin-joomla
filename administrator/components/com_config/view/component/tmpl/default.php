@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_config
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -78,7 +78,10 @@ JFactory::getDocument()->addScriptDeclaration(
 							</div>
 						<?php endif; ?>
 						<?php foreach ($this->form->getFieldset($name) as $field) : ?>
-							<?php $dataShowOn = ''; ?>
+							<?php
+								$dataShowOn = '';
+								$groupClass = $field->type === 'Spacer' ? ' field-spacer' : '';
+							?>
 							<?php if ($field->showon) : ?>
 								<?php JHtml::_('jquery.framework'); ?>
 								<?php JHtml::_('script', 'jui/cms.js', array('version' => 'auto', 'relative' => true)); ?>
@@ -87,7 +90,7 @@ JFactory::getDocument()->addScriptDeclaration(
 							<?php if ($field->hidden) : ?>
 								<?php echo $field->input; ?>
 							<?php else : ?>
-								<div class="control-group"<?php echo $dataShowOn; ?>>
+								<div class="control-group<?php echo $groupClass; ?>"<?php echo $dataShowOn; ?>>
 									<?php if ($name != 'permissions') : ?>
 										<div class="control-label">
 											<?php echo $field->label; ?>

@@ -3,13 +3,13 @@
  * @package     Joomla.Site
  * @subpackage  com_contact
  *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
-$params             = $this->params;
+$params             = $this->item->params;
 $presentation_style = $params->get('presentation_style');
 
 $displayGroups      = $params->get('show_user_custom_fields');
@@ -47,7 +47,10 @@ $userFieldGroups    = array();
 				<?php continue; ?>
 			<?php endif; ?>
 
-			<?php echo '<dt>' . $field->label . '</dt>'; ?>
+			<?php if ($field->params->get('showlabel')) : ?>
+				<?php echo '<dt>' . JText::_($field->label) . '</dt>'; ?>
+			<?php endif; ?>
+
 			<?php echo '<dd>' . $field->value . '</dd>'; ?>
 		<?php endforeach; ?>
 		</dl>

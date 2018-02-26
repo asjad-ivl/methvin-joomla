@@ -1,2 +1,0 @@
-<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";s:471:"(function($){$.fn.fadeInScroll=function(options){var elements=$(this);var settings=$.extend({minDistance:75*$(window).height()/100},options);$(elements).each(function(){$(this).css('opacity','0');});CheckFades();function CheckFades(){vWindowScrollTop=$(window).scrollTop();$(elements).each(function(){if(((vWindowScrollTop+parseInt(settings.minDistance))>=$(this).offset().top)){$(this).animate({opacity:1});}});}
-$(window).scroll(function(){CheckFades();});};}(jQuery));";s:6:"output";s:0:"";}
